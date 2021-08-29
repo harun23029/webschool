@@ -1,0 +1,121 @@
+{% load static %}
+<html>
+<head>
+	<title>
+		Create or Join Your School
+	</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/mdb.min.css' %}" />
+</head>
+<body>
+
+        <div style="height:129px">
+            <img class="img2" src="{% static 'images/webschool.png' %}"><br> 
+            <a><p style="font-size: 30px;background-color: rgb(173, 152, 152); float: left;padding:2px;color: rgb(8, 1, 1);"onclick="show_creat()">Create School</p></a>
+            <a><p style="font-size: 30px;background-color:rgb(206, 209, 209); float: left;padding:2px;color: rgb(7, 1, 1);"onclick="show_join()">Join School</p></a>
+        </div>
+        <div id="create" style="background-color: rgb(173, 152, 152);width: 100%; height: auto;display: block;" >
+            <div class="create">
+                <form action="create_school" method="post">
+                    {% csrf_token %}
+                    <label><b><b>School Name</b></b> (required)</label>
+                    <input name="school_name" class="signup_form" type="text" placeholder="School Name" required>
+                    <label><b><b>Address</b></b>(required)</label>
+                    <input name="address" class="signup_form" type="text" placeholder="School Address" required>
+                    <label><b><b>Established Date</b></b></label>
+                    <input name="est_year" class="signup_form" type="date" >
+                    <label><b><b>School Type (required)</b></b></label>
+                    <select name="school_type" id="gender">
+                        <option value="Co-Education">Co-Education</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select><br>
+                      <label><b><b>Lowest Level</b></b> (required)</label>
+                      <input name="lowest_level" class="signup_form" type="text" placeholder="class-1" required>
+                      <label><b><b>Topest Level</b></b> (required)</label>
+                      <input name="topest_level" class="signup_form" type="text" placeholder="class-10" required>
+                      <label><b><b>Upload School Cover Pic</b></b> (required)</label><br>
+                      <input  name="cover_pic" type="file" name="pic" accept="image/*" required><br>
+                      <label><b><b>Upload a file related your school to get approved</b></b> (required)</label><br>
+                      <input  name="prove_pic" type="file" name="pic" accept="image/*" required><br><br>
+                      <input type="submit">
+                </form>
+               
+              </div>
+              
+        </div>
+        <div id="join"style="background-color:rgb(206, 209, 209);width: 100%; height: 100%;display: none;">
+            <div class="create">
+                <form action="join_user" method="POST">
+                    {% csrf_token %}
+                    <label><b><b>Join As</b></b> (required)</label><br>
+                    <select name="user_type">
+                    <option value="Adminstrator">Adminstrator</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Student">Student</option>
+                  </select><br>
+                <label><b><b>Join Code</b></b> (required)</label><br>
+                <input type="text" name="join_code" maxlength="8" placeholder="code (8 char)" required><br><br>
+                  <input type="submit">
+                </form>
+                
+              </div>
+              
+              <div class="card4" id="join_code">
+                <h5 style="padding-bottom: 5px;padding-top: 5px;padding-left: 5px;"> Your School Code is:</h5>
+                <p style="padding-bottom: 5px;padding-top: 5px;padding-left: 5px;font-size: 12px"><i>Please remember this code and share with other users</i></p>
+                <p style="padding-left:10px;padding-top: 0px;"><b>For Admin: {{admin_code}}</b></p>
+                <p style="padding-left:10px;padding-top: 0px;"><b>For Teachers: {{teacher_code}}</b></p>
+                <p style="padding-left:10px;padding-top: 0px;"><b>For Students: {{student_code}}</b></p>
+
+                <button style="margin-left: 45%" onclick="hide_code()"><b>Ok</b></button>
+            </div>
+
+        </div>
+       
+       
+            <script>
+                if('{{join_type}}'=='join'){
+                    document.getElementById('create').style.display="none";
+                    document.getElementById('join').style.display='block';
+                    document.getElementById('join_code').style.display='block'
+                }
+                else if('{{join_type}}'=='join_old'){
+                    document.getElementById('create').style.display="none";
+                    document.getElementById('join').style.display='block';
+                    window.alert('Invalid Code');
+                }
+                else if('{{join_type}}'=='create'){
+                    document.getElementById('create').style.display="block";
+                    document.getElementById('join').style.display='none';
+                }
+
+                if('{{msg}}'=='1'){
+                    window.alert('School already exisists!!')
+                }
+                    
+            </script>
+        
+        <script>
+            function show_creat(){
+                
+                document.getElementById('create').style.display="block";
+                document.getElementById('join').style.display="none";
+            }
+            function show_join(){
+                document.getElementById('create').style.display="none";
+                document.getElementById('join').style.display='block';
+            }
+            function hide_code(){
+                document.getElementById('join_code').style.display='none'
+            }
+        </script>
+       
+</body>
+</html>

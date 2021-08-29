@@ -1,0 +1,285 @@
+.html {
+  scroll-behavior: smooth;
+  margin:0px;
+  padding:0px;
+  overflow-x: hidden;
+ }
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    margin:0px;
+    padding:0px;
+  }
+.topdiv{
+	height: 60px;
+	width: 100%;
+	background-color: blue;
+}
+@media only screen and (max-width:600px) {
+  .topdiv {
+    width: 100%;
+    padding: 0;
+  }
+}
+.topdiv2{
+  width: auto;
+  float: left;
+}
+
+.login_button{
+	float: right;
+  color: #ff22;
+	margin: 5px;
+}
+.logo_img{
+  height: 100px;
+  width: 400px;
+}
+@media only screen and (max-width: 600px){
+   .logo_img{
+     width: 60%;
+   }
+}
+.top_heading{
+  font-size: 35px;
+}
+.second_heading{
+  font-size: 20px;
+}
+@media only screen and (max-width: 600px){
+  
+.top_heading{
+  font-size: 20px;
+}
+.second_heading{
+  font-size: 16px;
+}
+}
+.img1{
+  width: 100%;
+  height: 400px;
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+}
+.image2 {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  height: 100px;
+  width: 100px;
+}
+
+@media only screen and (max-width: 600px){
+  .image1{
+    height: 300px;
+  }
+}
+
+.column1{
+  padding: 50px;
+  float: left;
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px){
+  .column1{
+    padding: 30px;
+    float: left;
+    width: 100%;
+  }
+}
+.ul1{
+  padding-left: 50px;
+}
+.contactdiv{
+  float: left;
+  margin: 50px;
+}
+.contact_form{
+  width: 95%; 
+}
+.signup_form {
+  width: calc(100% - 20px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid rgb(199, 199, 241);
+  box-sizing: border-box;
+
+  white-space: input-wrap;       
+  white-space: -moz-input-wrap;  
+  white-space: -input-wrap;    
+  white-space: -o-input-wrap;  
+  word-wrap: break-word;
+}
+.contact_message {
+  width: calc(100% - 20px);
+  height: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid rgb(199, 199, 241);
+  box-sizing: border-box;
+}
+.signin{
+  padding-left: 33%;
+  padding-top: 5%;
+  background-color: blueviolet;
+}
+.signin_card{
+  width:50%;
+  background-color:white;
+  padding: 2%;
+}
+
+@media only screen and (max-width: 600px){
+  .signin{
+    width: 100%;
+    padding-left: 5%;
+    padding-top: 40%;
+  }
+  .signin_card{
+    width:85%;
+    background-color:white;
+    padding: 2%;
+  }
+}
+.card_img{
+  width: 80%;
+}
+@media only screen and (max-width: 600px){
+  .card_img{
+    width: 60%;
+  }
+}
+.circle{
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  border-radius: 25px;
+  margin-top: 20px;
+  float: left;
+}
+.column2{
+  float: left;
+  width: 60%;
+}
+.column3{
+  float: left;
+  padding-left: 20%;
+  width: 40%;
+}
+@media only screen and (max-width: 600px){
+  .column2{
+    float: left;
+    width: 75%;
+  }
+  .column3{
+    padding-left: 0px;
+    float: left;
+    width: 25%;
+  }
+}
+.card2{
+  height: 100%;
+  width: 100%;
+  border: 5px;
+  border-radius: 15px;
+}
+@media only screen and (max-width: 600px){
+  .card2{
+    height: 100%;
+    width: 100%;
+    border: 5px;
+    border-radius: 5px;
+  }
+ 
+}
+.img2{
+  height: 80px;
+  width: 400px;
+}
+.img3{
+  height: 70px;
+  width: 400px;
+}
+.img4{
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+}
+.topdiv2{
+  height: 70px;
+  width: 100%;
+  background-color: blue;
+}
+@media only screen and (max-width: 600px){
+  .img2{
+    height: 80px;
+    width: 300px;
+  }
+  .img3{
+  height: 70px;
+  width: 200px;
+}
+.img4{
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+}
+}
+.create{
+  padding: 50px;
+}
+.card3{
+  height: 450px;
+  width:350px;
+  background-color: blue;
+  border-radius: 5px;
+  margin: 20px;
+  float: left;
+
+}
+.card4{
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  display: none;
+  position:fixed;
+  top: 25%;
+  left: 35%;
+  border-style: dotted;
+}
+@media only screen and (max-width: 600px){
+  .card3{
+  height: 400px;
+  width:300px;
+  background-color: blue;
+  border-radius: 5px;
+  margin: 20px;
+  float: left;
+}
+.card4{
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  display: none;
+  position:fixed;
+  top: 25%;
+  left: 5%;
+  border-style: dotted;
+}
+}

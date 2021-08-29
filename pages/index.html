@@ -1,0 +1,129 @@
+{% load static %}
+<html>
+<head>
+	<title>
+		Manage Your School
+	</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/mdb.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/style.css' %}" />
+</head>
+<body>
+	<div id="top_div" class="topdiv">
+		<div class="text-right">
+			{% if user.is_authenticated %}
+			<a href="accounts/signout"><button type="button" class="btn btn-success login_button"><b>SIGN OUT</b></button></a>
+			{% else %}
+			<a href="accounts/signup"><button type="button" class="btn btn-success login_button"><b>SIGN UP</b></button></a>
+			<a href="accounts/signin"><button type="button" class="btn btn-success login_button"><b>SIGN IN</b></button></a>
+			{% endif %}
+		</div>
+	</div>
+	<div>
+		<div class="column2">
+			<img class="logo_img" src="{% static 'images/webschool.png' %}">
+		</div>
+		<div class="column3">
+			{% if user.is_authenticated %}
+			<div class="circle"><a href="accounts/create_join"><b style="padding-left: 30%;padding-bottom:5px;font-size: 35px;color: black;">+</b></a></div>
+			{% else %}
+			<div class="circle"><a href="accounts/signin"><b style="padding-left: 30%;padding-bottom:5px;font-size: 35px;color: black;">+</b></a></div>
+            {% endif %}
+			<p style="padding-top: 40px;">Create or join School</p>
+		</div>
+		
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div>
+		<p align="center" class="top_heading"><b>Manage Teaching and Learning with<br> Web Schools BD</b></p>
+		<br>
+		<p align="center" class="second_heading">Web Schools BD helps to Manage curricular activites of a school like class attendence, exam results, organize assignments,<br> boost collaboration, and foster better communication.</p>
+	</div>
+	<div align="center">
+		{% if user.is_authenticated %}
+		<a href="gotoschool"><button type="button" align="center" class="btn btn-primary " style="margin: auto;">Go to Your School</button></a>
+		{% else %}
+		<a href="accounts/signin"><button type="button" align="center" class="btn btn-primary " style="margin: auto;">Go to Your School</button></a>
+		{% endif %}
+		<br><br><p style="font-size: 12px;">Having trouble signing into Classroom? <a href="#help">Get tips and help here.</a></p>
+	</div>
+	<div class="parent">
+		<img class="image1" src="{% static 'images/img1.jpg' %}" />
+		<a href="videos/demo" target="_blank"><img class="image2" src="{% static 'images/play2.png' %}" /></a>
+	</div>
+	<br><br>
+	<h5 style="padding-left: 20px;">
+		Manage your school activities easily
+	</h5>
+
+	<div >
+		<div class="column1">
+			<p>Web School BD worked with educators across the country to create a platform, easy-to-use tool that helps teachers manage curricular activities of school. With web school bd, educators can create schools, and do everything in one place.</p>
+		</div>
+		<div class="column1">
+			<p><b>Activities You Can Handle</b></p>
+			<ul style="padding-left: 20px;">
+				<li>Class attendence</li>
+				<li>Exam results</li>
+				<li>Marksheets</li>
+				<li>Class and Exam Routines</li>
+				<li>Assignments</li>
+			</ul>
+		</div>
+	</div>
+	<br><br><br>
+	<h3 style="padding-left: 30px;" id="help"><b>Help</b></h3><br>
+	<div class="ul1">
+		<ul > 
+			<li>To get our serviceyou have to signup first.<u><a href="accounts/signup">Sign Up</a></u> here
+			<br>To sign up you have to provide your phone number/ email address and create a password for your account.
+			</li>
+			<li>
+				Then you have to signin into our website.<u><a href="accounts/signin">Sign in</a></u> here<br>
+				To sign in you have to provide your phone number/email address that you have provided at the time of crating account.
+			</li>
+			<li>
+				After sign in you will get a option for creating a school or join a school.
+			</li>
+			
+			
+		</ul>
+	</div>
+	<br><br>
+	<h3 style="padding-left: 30px;"><b>Contact US</b></h3><br>
+	<div class="contactdiv">
+		<b>Fill up this form to contact with us.</b><br><br>
+		<div class="contact_form">
+		  <form action="savecontact" method="post">
+				{% csrf_token %}
+				<label><b>Name</b> (required)</label>
+				<input name="name" class="signup_form" type="text" placeholder="Your Name" required>
+				<label><b>Email </b>(required)</label>
+				<input name="email" class="signup_form" type="text" placeholder="example@gmail.com" required>
+				<label><b>Phone No.</b></label>
+				<input name="phone" class="signup_form" type="number" placeholder="01234567891">
+				<label><b>Message (required)</b></label>
+				<textarea name="message" class="contact_message" type="text" placeholder="Your Comment" required></textarea>
+				<input type="submit">
+		  </form>
+		  
+		</div>
+	  </div>
+</div>
+</div>
+	<script src="{% static 'MDB-Free_4.13.0/js/jquery.min.js' %}"></script>
+	<script src="{% static 'MDB-Free_4.13.0/js/popper.min.js' %}"></script>
+	<script src="{% static 'MDB-Free_4.13.0/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'MDB-Free_4.13.0/js/mdb.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+<head>
+	<title>
+		 Your Schools
+	</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/mdb.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'MDB-Free_4.13.0/css/style.css' %}" />
+</head>
+<body>
+
+        <div class="topdiv2">
+            <img class="img3" src="{% static 'images/webschool.png' %}">
+            <a href="../home"><button type="button" class="btn btn-success login_button"><b>Go Home</b></button></a>
+        </div>
+        <br><br><br>
+        <br>
+        {% for j in joined_user %}
+        <div class="card3">
+            <img class="img4" src="{{j.joined_school_pic.url}}"><br>
+            <h3 style="padding: 10px;color: white">{{j.school_name}}</h3>
+        </div>
+        {% endfor %}
+        
+       
+</body>
+</html>
